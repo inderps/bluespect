@@ -1,3 +1,4 @@
+/* global cordova, bluetoothSerial, listButton, connectButton, sendButton, disconnectButton */
 var app = {
     initialize: function() {
         this.bindEvents();
@@ -7,7 +8,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-        alert("hello");
+        RefreshButtonBinding.init();
     }
 };
 

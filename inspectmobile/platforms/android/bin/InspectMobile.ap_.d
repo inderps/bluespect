@@ -19,11 +19,16 @@
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/css \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/index.html \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/lib \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/plugins \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/app.js \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/bindings \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/endpoints \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/inputs \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/bindings/refreshButtonBinding.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/endpoints/base.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/endpoints/salesforce.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/endpoints/twitter.js \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/inputs/bluetoothReader.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/css/app.css \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/lib/bootstrap \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/lib/crossdomain \
@@ -40,4 +45,7 @@
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/lib/jquery/jquery.min.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/lib/jquery/jquery.serializeJSON.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/lib/jquery/jquery.validate.min.js \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/plugins/com.megster.cordova.bluetoothserial \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/plugins/com.megster.cordova.bluetoothserial/www \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/plugins/com.megster.cordova.bluetoothserial/www/bluetoothSerial.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/bin/AndroidManifest.xml \
