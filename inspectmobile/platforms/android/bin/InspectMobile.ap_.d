@@ -1,0 +1,25 @@
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/bin/InspectMobile.ap_ \
+ : /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/res/drawable/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/res/drawable-hdpi/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/res/drawable-ldpi/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/res/drawable-mdpi/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/res/drawable-xhdpi/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/res/values/strings.xml \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/res/xml/config.xml \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/bin/res/drawable/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/bin/res/drawable-hdpi/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/bin/res/drawable-ldpi/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/bin/res/drawable-mdpi/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/bin/res/drawable-xhdpi/icon.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/config.xml \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/cordova.js \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/cordova_plugins.js \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/css \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/img \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/index.html \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/js \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/css/index.css \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/img/logo.png \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/js/index.js \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/bin/AndroidManifest.xml \
