@@ -8,7 +8,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-        RefreshButtonBinding.init();
+        BluetoothBindings.init();
     }
 };
 

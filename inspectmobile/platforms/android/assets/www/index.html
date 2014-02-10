@@ -30,6 +30,7 @@
             <span class="col-lg-6 pull-left">Bluetooth Device List</span>
             <span class="col-lg-6 pull-right"><button class="btn btn-danger btn-sm" id="bluetooth-refresh"><i class="glyphicon glyphicon-refresh"></i></button></span>
         </div>
+        <input type="hidden" id="connected-device-name"/>
         <ul class="list-group" id="bluetooth-device-list">
         </ul>
         </div>
@@ -52,7 +53,7 @@
 <script src="app/endpoints/base.js"></script>
 <script src="app/endpoints/salesforce.js"></script>
 <script src="app/endpoints/twitter.js"></script>
-<script src="app/bindings/refreshButtonBinding.js"></script>
+<script src="app/bindings/bluetoothBindings.js"></script>
 <script src="app/app.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 </body>

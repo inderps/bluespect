@@ -24,7 +24,7 @@
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/bindings \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/endpoints \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/inputs \
-/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/bindings/refreshButtonBinding.js \
+/Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/bindings/bluetoothBindings.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/endpoints/base.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/endpoints/salesforce.js \
 /Users/InderPal/projects/bluespect/inspectmobile/platforms/android/assets/www/app/endpoints/twitter.js \
