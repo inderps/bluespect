@@ -14,6 +14,9 @@ var app = {
 
 $(document).ready(function(){
     app.initialize();
+    $("#send").click(function(ev){
+        BluetoothReader.isavailable();
+    });
 
 //    $("#sendData").click(function(event){
 //        event.preventDefault();

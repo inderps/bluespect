@@ -1,4 +1,28 @@
 var BluetoothReader = {
+    listen: function(){
+        bluetoothSerial.subscribe("\n", BluetoothReader.onmessage, function(error){
+            alert(error);
+        });
+//        bluetoothSerial.available(function (numBytes) {
+//            alert("There are " + numBytes + " available to read.");
+//        },  function(error){
+//            alert(error);
+//        });
+//        bluetoothSerial.read(function (data) {
+//            alert(data);
+//        },  function(error){
+//            alert(error);
+//        });
+    },
+
+    isavailable: function(){
+        bluetoothSerial.available(function (numBytes) {
+            alert("There are " + numBytes + " available to read.");
+        },  function(error){
+            alert(error);
+        });
+    },
+
     list: function(){
         $(".status-message").html("Searching for devices....");
         bluetoothSerial.list(BluetoothReader.onDeviceList, function(error){
@@ -33,5 +57,10 @@ var BluetoothReader = {
 
     onDeviceConnect: function(){
         $(".status-message").html("Currently connected to " + $("#connected-device-name").val());
+        BluetoothReader.listen();
+    },
+
+    onmessage: function(message) {
+        alert(message);
     }
 }
