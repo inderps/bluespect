@@ -1,5 +1,6 @@
 package com.randdusing.bluetoothle;
 
+import java.lang.Exception;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -346,7 +347,7 @@ public class BluetoothLePlugin extends CordovaPlugin
       }
     }
 
-    Log.d(TAG, "vishal");
+    Log.d("vishal", "scan started");
     
     //Start the scan with or without service UUIDs
     boolean result = false;
@@ -459,7 +460,21 @@ public class BluetoothLePlugin extends CordovaPlugin
 	    @Override
 	    public void onLeScan(final BluetoothDevice device, int rssi,
 	            byte[] scanRecord) {
-	    		Log.d("vishal", device.getName());
+            try{
+                JSONObject returnObj = new JSONObject();
+                returnObj.put(keyName, device.getName());
+                returnObj.put(keyAddress, device.getAddress());
+                returnObj.put(keyClass, device.getBluetoothClass().getDeviceClass());
+                returnObj.put(keyStatus, statusScanResult);
+
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, returnObj);
+                pluginResult.setKeepCallback(true);
+                scanCallbackContext.sendPluginResult(pluginResult);
+            }
+            catch(Exception e){
+                    	  Log.d("vishal", "error: " + e.getMessage());
+            }
+
 	   }
 	};
 
@@ -650,7 +665,8 @@ public class BluetoothLePlugin extends CordovaPlugin
   
   private void discoverAction(CallbackContext callbackContext)
   {
-    //Check if gatt was ever even connected
+      Log.d("vishal", "jaya");
+      //Check if gatt was ever even connected
     if (bluetoothGatt == null)
     {
       Log.d(TAG, logGattNull);
@@ -1097,7 +1113,7 @@ public class BluetoothLePlugin extends CordovaPlugin
       JSONArray servicesArray = new JSONArray();
       
       List<BluetoothGattService> services = bluetoothGatt.getServices();
-      
+
       for (BluetoothGattService service : services)
       {
         JSONObject serviceObject = new JSONObject();

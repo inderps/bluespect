@@ -19,18 +19,23 @@ $(document).ready(function(){
         event.preventDefault();
         bluetoothle.init(function(){
             bluetoothle.startScan(function(s){
-                alert(s.status);
+            if(s.status == "scanResult"){
+            alert(s.name);
+              window.address = s.address;
+             }
             }, function(e){alert(e)});
         }, function(e){alert(e)});
     });
 
-    $("#sendData").click(function(event){
+    $("#bluetooth-refresh").click(function(event){
         event.preventDefault();
-        bluetoothle.init(function(){
-            bluetoothle.startScan(function(s){
-                alert(s.status);
-            }, function(e){alert(e)});
-        }, function(e){alert(e)});
+        bluetoothle.connect(function(s){
+        alert(s.status);
+        bluetoothle.discover(function(s){
+//        var tbl = prettyPrint(s);
+        $("#print").val(JSON.stringify(s, null, 4));
+        }, function(e){alert(e);});
+        }, function(e){alert(e);}, {address: window.address})
     });
 });
 
