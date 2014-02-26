@@ -8,7 +8,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-
+alert("he");
 //        BluetoothBindings.init();
     }
 };
@@ -33,7 +33,13 @@ $(document).ready(function(){
         alert(s.status);
         bluetoothle.discover(function(s){
 //        var tbl = prettyPrint(s);
-        $("#print").val(JSON.stringify(s, null, 4));
+            bluetoothle.read(function(d){
+                alert(bluetoothle.getBytes(d));
+
+            }, function(e){alert(e);}, {
+                serviceUuid: "f000aa50-0451-4000-b000-000000000000",
+                characteristicUuid: "f000aa51-0451-4000-b000-000000000000"
+            });
         }, function(e){alert(e);});
         }, function(e){alert(e);}, {address: window.address})
     });
