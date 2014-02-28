@@ -14,21 +14,13 @@ var BluetoothLE = {
     },
 
     connect: function(deviceAddress, deviceName) {
-        $("#connected-device-name").val(deviceName);
-        $("#connected-device-address").val(deviceAddress);
+        $("#connected_device").html(deviceName);
         $(".status-message").html("Connecting....");
         bluetoothle.connect(function(s){
             if(s.status == "connected"){
-                $(".status-message").html("Currently connected to " + deviceName);
-//                         bluetoothle.discover(function(s){
-//                            var characteristicsList = $("#characteristics-list");
-//                            for(var i=0; i<s.services.length; i++){
-//                                $("#services").append("<ul class='list-group' data-service-id='" + s.services[i].uuid +"'></ul>");
-//                                for(var j=0; j<s.services[i].characteristics.length; j++){
-//                                    $("#services ul").last().append("<li class='characteristic-item list-group-item' data-char-id='" + s.services[i].characteristics[j].uuid +"'> "+ s.services[i].characteristics[j].uuid +" </li>")
-//                                }
-//                            }
-//                         }, function(e){alert(e);});
+                $(".status-message").html("");
+                $("#devices_list_panel").hide();
+                $("#connected_device_panel").show();
             }
         }, function(e){alert(e);}, {address: deviceAddress});
     },
@@ -37,11 +29,21 @@ var BluetoothLE = {
         bluetoothle.discover(function(s){
             bluetoothle.write(function(s){
                 bluetoothle.read(function(s){
+                    $("#reading-data").html("X: " + s.x + ", Y: " + s.y + ", Z: " + s.z);
+                    $("#taken-at-data").html(new Date());
+                    $("#reading-modal").modal("show");
                     alert(s.x);
                 }, function(e){alert(e);}, {
                 serviceUuid: "f000aa50-0451-4000-b000-000000000000", characteristicUuid: "f000aa51-0451-4000-b000-000000000000"});
             }, function(e){alert(e);}, {
                 serviceUuid: "f000aa50-0451-4000-b000-000000000000", characteristicUuid: "f000aa52-0451-4000-b000-000000000000"});
         }, function(e){alert(e)});
-}
+    },
+
+    disconnect: function(){
+        bluetoothle.disconnect(function(s){
+            $("#devices_list_panel").show();
+            $("#connected_device_panel").hide();
+        }, function(e){alert(e)});
+    }
 }

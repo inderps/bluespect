@@ -20,11 +20,10 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <h5 class="status-message"></h5>
-        <button class="btn btn-large btn-success" id="get-reading">Get Reading</button>
     </div>
 </div>
 
-<div class="row">
+<div class="row" id="devices_list_panel">
     <div class="col-md-12">
         <div class="well text-center">
         <div class="row device-list-heading">
@@ -38,8 +37,37 @@
         </div>
     </div>
 </div>
+<div class="row" id="connected_device_panel">
+    <div class="col-md-12">
+        <div class="well text-center">
+            <h5>Connected Device: <span class="text-info" id="connected_device"></span></h5>
+            <ul class="list-group">
+                <li class="list-group-item"><button class="btn btn-lg btn-danger" id="take-reading-btn">Take Reading</button></li>
+                <li class="list-group-item"><button class="btn btn-lg btn-default" id="disconnect-btn">Disconnect</button></li>
+            </ul>
 
-<textarea id="print"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="reading-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Reading</h4>
+            </div>
+            <div class="modal-body text-center">
+                <div class="well">
+                    <h3 id="reading-data">X: 27, Y:37, Z:89</h3>
+                    <h5>at: <span class="text-info" id="taken-at-data">12 April 2014, 5:34PM</span></h5>
+                </div>
+                <button class="btn btn-info" id="salesforce-push-btn">Salesforce</button>
+                <button class="btn btn-info" id="twitter-push-btn">Twitter</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript">
     window.onerror = function(message, url, lineNumber) {
@@ -52,6 +80,7 @@
 <script src="lib/bootstrap/bootstrap.min.js"></script>
 <script src="lib/jquery/jquery.validate.min.js"></script>
 <script src="lib/crossdomain/crossdomain.js"></script>
+<script src="app/components/loader.js"></script>
 <script src="app/inputs/bluetoothReader.js"></script>
 <script src="app/inputs/bluetoothLE.js"></script>
 <script src="app/endpoints/base.js"></script>
@@ -60,6 +89,6 @@
 <script src="app/bindings/bluetoothBindings.js"></script>
 <script src="app/pretty.js"></script>
 <script src="app/app.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
 </body>
 </html>
