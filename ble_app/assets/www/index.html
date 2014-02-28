@@ -20,9 +20,10 @@
 <div class="row">
     <div class="col-md-12 text-center">
         <h5 class="status-message"></h5>
+        <button class="btn btn-large btn-success" id="get-reading">Get Reading</button>
     </div>
 </div>
-<button id="send">Send</button>
+
 <div class="row">
     <div class="col-md-12">
         <div class="well text-center">
@@ -31,12 +32,13 @@
             <span class="col-lg-6 pull-right"><button class="btn btn-danger btn-sm" id="bluetooth-refresh"><i class="glyphicon glyphicon-refresh"></i></button></span>
         </div>
         <input type="hidden" id="connected-device-name"/>
+        <input type="hidden" id="connected-device-address"/>
         <ul class="list-group" id="bluetooth-device-list">
         </ul>
         </div>
-        <!--<button class="btn btn-primary" id="sendData">Send</button>-->
     </div>
 </div>
+
 <textarea id="print"></textarea>
 
 <script type="text/javascript">
@@ -51,6 +53,7 @@
 <script src="lib/jquery/jquery.validate.min.js"></script>
 <script src="lib/crossdomain/crossdomain.js"></script>
 <script src="app/inputs/bluetoothReader.js"></script>
+<script src="app/inputs/bluetoothLE.js"></script>
 <script src="app/endpoints/base.js"></script>
 <script src="app/endpoints/salesforce.js"></script>
 <script src="app/endpoints/twitter.js"></script>

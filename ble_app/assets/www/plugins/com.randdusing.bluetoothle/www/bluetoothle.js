@@ -44,6 +44,9 @@ var bluetoothle = {
   },
   isDiscovered: function(successCallback, errorCallback) {
     cordova.exec(successCallback, errorCallback, bluetoothleName, "isDiscovered", []);
+  },
+  getGyroscopeReading: function(successCallback, errorCallback) {
+      cordova.exec(successCallback, errorCallback, bluetoothleName, "getGyroscopeReading", []);
   }
 }
 module.exports = bluetoothle;});

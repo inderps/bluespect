@@ -30,6 +30,8 @@ import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
+import static android.bluetooth.BluetoothGattCharacteristic.FORMAT_SINT8;
+import static android.bluetooth.BluetoothGattCharacteristic.FORMAT_UINT8;
 
 public class BluetoothLePlugin extends CordovaPlugin 
 {
@@ -89,7 +91,8 @@ public class BluetoothLePlugin extends CordovaPlugin
   private final String writeDescriptorActionName = "writeDescriptor";
   private final String isDiscoveredActionName = "isDiscovered";
   private final String isConnectedActionName = "isConnected";
-  
+  private final String getGyroscopeReadingActionName = "getGyroscopeReading";
+
   //Log and Callback Message Strings
   private final String logBtNotEnabled = "Bluetooth not enabled";
   private final String logBtNotEnabledUser = "Bluetooth not enabled by user";
@@ -243,6 +246,11 @@ public class BluetoothLePlugin extends CordovaPlugin
     {
       isDiscoveredAction(callbackContext);
       return true;
+    }
+    else if (getGyroscopeReadingActionName.equals(action))
+    {
+        Log.d("s", "s");
+        return true;
     }
     return false;
   }
@@ -834,16 +842,8 @@ public class BluetoothLePlugin extends CordovaPlugin
       callbackContext.error(logNoCharacteristic);
       return;
     }
-    
-    String value = getValue(obj);
-    
-    if (value != null)
-    {
-      callbackContext.error(logWriteValueNotFound);
-      return;
-    }
-    
-    boolean result = characteristic.setValue(value);
+
+    boolean result = characteristic.setValue(new byte[] { (byte)(0x01) });
     
     if (!result)
     {
@@ -1424,7 +1424,27 @@ public class BluetoothLePlugin extends CordovaPlugin
       //If the read was successful, return the value
       if (status == BluetoothGatt.GATT_SUCCESS)
       {
-        readCallbackContext.success(characteristic.getValue());
+        if(characteristic.getUuid().toString().equals("f000aa51-0451-4000-b000-000000000000")){
+            float y = TiSensorUtils.shortSignedAtOffset(characteristic, 0) * (500f / 65536f) * -1;
+            float x = TiSensorUtils.shortSignedAtOffset(characteristic, 2) * (500f / 65536f);
+            float z = TiSensorUtils.shortSignedAtOffset(characteristic, 4) * (500f / 65536f);
+            JSONObject returnObj = new JSONObject();
+            try
+            {
+                returnObj.put("x", Float.toString(x));
+                returnObj.put("y", Float.toString(y));
+                returnObj.put("z", Float.toString(z));
+            }
+            catch (JSONException e)
+            {
+            }
+            readCallbackContext.success(returnObj);
+        }
+          else{
+            readCallbackContext.success(characteristic.getValue());
+        }
+
+
       }
       //Else return error with message
       else
@@ -1524,4 +1544,8 @@ public class BluetoothLePlugin extends CordovaPlugin
       writeDescriptorCallbackContext = null;
     }
   };
+
 }
+
+
+
